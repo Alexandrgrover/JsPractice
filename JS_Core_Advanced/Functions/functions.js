@@ -1,18 +1,13 @@
-function firstNonRecurring(str){
-    let tmp = ''
-    let arr = Array.from(str)
+class Person{
+    constructor(name,age){
+        this.name = name
+        this.age = age
+    }
 
-    for(let i = 0; i < arr.length; i ++){
-        tmp = arr[i]
-        arr.splice(i, 1)
-
-        if (!arr.includes(tmp)){
-            return tmp
-        }
-        else{
-            arr.splice(i, 0, tmp)
-        }
-
-        if (i === arr.length - 1) return ''
+    print(){
+        return `My name is ${this.name} and my age is ${this.age}`
     }
 }
+
+const person1 = new Person("Grover", 20)
+console.log(person1.print())
